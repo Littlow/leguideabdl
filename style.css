@@ -1,0 +1,435 @@
+:root {
+  --bg-page: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --slate-dark: #1e293b;
+  --sky-accent: #0284c7;
+  --sky-soft: #e0f2fe;
+  --sky-border: #bae6fd;
+  --card-bg: #ffffff;
+  --border-light: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   POP-UP BLEU CIEL + FLOU PROGRESSIF
+   ========================================= */
+.age-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(15, 23, 42, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.55s ease,
+    backdrop-filter 0.55s ease,
+    -webkit-backdrop-filter 0.55s ease,
+    background-color 0.55s ease,
+    visibility 0.55s ease;
+}
+
+.age-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.age-modal {
+  background: linear-gradient(145deg, #e0f2fe 0%, #bae6fd 100%);
+  border: 2px solid #7dd3fc;
+  border-radius: 28px;
+  max-width: 460px;
+  width: 100%;
+  padding: 36px 30px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.25);
+  transform: translateY(16px) scale(0.97);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s ease;
+}
+
+.age-overlay.is-visible .age-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.age-badge {
+  display: inline-block;
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.age-modal h2 {
+  color: #0c4a6e;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.age-modal p {
+  color: #0369a1;
+  font-size: 0.98rem;
+  margin-bottom: 12px;
+}
+
+.age-subtext {
+  font-size: 0.85rem !important;
+  opacity: 0.85;
+  margin-bottom: 24px !important;
+}
+
+.age-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0369a1;
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.65);
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+  padding: 11px 20px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+}
+
+/* =========================================
+   EN-TÊTE & NAVIGATION
+   ========================================= */
+.site-header {
+  background-color: var(--slate-dark);
+  color: #ffffff;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+}
+
+.logo-ext {
+  color: #38bdf8;
+  font-size: 0.95rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #ffffff;
+}
+
+.btn-discreet {
+  background-color: #334155;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-discreet:hover {
+  background-color: #ef4444;
+  border-color: #ef4444;
+}
+
+.affiliation-banner {
+  background-color: var(--sky-soft);
+  border-bottom: 1px solid var(--sky-border);
+  color: #0c4a6e;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* =========================================
+   HERO & BARRE DE FILTRES
+   ========================================= */
+.hero {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  padding: 44px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: var(--slate-dark);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  background-color: var(--bg-page);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+}
+
+.filters-bar input[type="text"],
+.filters-bar select {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: var(--text-main);
+}
+
+.filters-bar input[type="text"] {
+  min-width: 260px;
+  flex: 1;
+}
+
+.checkbox-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* =========================================
+   CARTES BOUTIQUES
+   ========================================= */
+.main-content {
+  padding: 40px 20px 64px;
+}
+
+.results-header {
+  margin-bottom: 20px;
+}
+
+.results-header h2 {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.boutiques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.shop-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.shop-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.shop-title {
+  font-size: 1.25rem;
+  color: var(--slate-dark);
+}
+
+.shop-country {
+  font-size: 0.8rem;
+  background-color: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.shop-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tag {
+  background-color: var(--sky-soft);
+  color: #0369a1;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
+.shop-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+}
+
+.shop-meta {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.btn-visit {
+  display: block;
+  text-align: center;
+  background-color: var(--slate-dark);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-visit:hover {
+  background-color: var(--sky-accent);
+}
+
+/* =========================================
+   PIED DE PAGE & MOBILE
+   ========================================= */
+.site-footer {
+  background-color: var(--slate-dark);
+  color: #94a3b8;
+  padding: 30px 0;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+@media (max-width: 680px) {
+  .main-nav {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}
