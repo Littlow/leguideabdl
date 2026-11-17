@@ -1,44 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================
-     1. GESTION POP-UP +18 ANS (FADE IN / OUT)
-     ========================================= */
+  /* 1. POP-UP +18 ANS */
   const ageOverlay = document.getElementById("age-overlay");
   const btnEnter = document.getElementById("btn-enter");
   const btnLeave = document.getElementById("btn-leave");
 
-  // Vérifie si l'utilisateur a déjà validé sa majorité
-  const isVerified = localStorage.getItem("leguideabdl_age_verified");
+  if (ageOverlay && !localStorage.getItem("leguideabdl_age_verified")) {
+    setTimeout(() => {
+      ageOverlay.classList.add("is-visible");
+    }, 60);
+  }
 
-  if (!isVerified) {
-    // Léger délai pour déclencher l'animation progressive du flou et du fondu
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        ageOverlay.classList.add("is-visible");
-      }, 60);
+  if (btnEnter) {
+    btnEnter.addEventListener("click", () => {
+      localStorage.setItem("leguideabdl_age_verified", "true");
+      ageOverlay.classList.remove("is-visible");
     });
   }
 
-  btnEnter.addEventListener("click", () => {
-    localStorage.setItem("leguideabdl_age_verified", "true");
-    // Retire la classe : le flou et la pop-up disparaissent progressivement en fade
-    ageOverlay.classList.remove("is-visible");
-  });
+  if (btnLeave) {
+    btnLeave.addEventListener("click", () => {
+      window.location.href = "https://www.google.fr";
+    });
+  }
 
-  btnLeave.addEventListener("click", () => {
-    window.location.href = "https://www.google.fr";
-  });
-
-  /* =========================================
-     2. BOUTON MODE DISCRET (SORTIE RAPIDE)
-     ========================================= */
+  /* 2. BOUTON MODE DISCRET */
   const btnDiscreet = document.getElementById("btn-discreet");
-  btnDiscreet.addEventListener("click", () => {
-    window.location.replace("https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal");
-  });
+  if (btnDiscreet) {
+    btnDiscreet.addEventListener("click", () => {
+      window.location.replace("https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal");
+    });
+  }
 
-  /* =========================================
-     3. CHARGEMENT ET FILTRAGE DES BOUTIQUES
-     ========================================= */
+  /* 3. CHARGEMENT ET FILTRAGE DES BOUTIQUES */
   let allBoutiques = [];
   const grid = document.getElementById("boutiques-grid");
   const resultsCount = document.getElementById("results-count");
@@ -47,15 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterCountry = document.getElementById("filter-country");
   const filterDiscreet = document.getElementById("filter-discreet");
 
-  fetch("data/boutiques.json")
-    .then((response) => response.json())
+  fetch("./data/boutiques.json")
+    .then((response) => {
+      if (!response.ok) throw new Error("Fichier JSON introuvable");
+      return response.json();
+    })
     .then((data) => {
       allBoutiques = data;
       renderBoutiques(allBoutiques);
     })
     .catch((err) => {
-      console.error("Erreur de chargement des boutiques :", err);
-      resultsCount.textContent = "Impossible de charger la liste des boutiques.";
+      console.error(err);
+      resultsCount.textContent = "Erreur : vérifie que le fichier s'appelle bien data/boutiques.json sur GitHub.";
     });
 
   function renderBoutiques(list) {
@@ -121,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     renderBoutiques(filtered);
   }
 
-  searchInput.addEventListener("input", applyFilters);
-  filterCategory.addEventListener("change", applyFilters);
-  filterCountry.addEventListener("change", applyFilters);
-  filterDiscreet.addEventListener("change", applyFilters);
+  if (searchInput) searchInput.addEventListener("input", applyFilters);
+  if (filterCategory) filterCategory.addEventListener("change", applyFilters);
+  if (filterCountry) filterCountry.addEventListener("change", applyFilters);
+  if (filterDiscreet) filterDiscreet.addEventListener("change", applyFilters);
 });
