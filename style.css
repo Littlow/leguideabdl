@@ -1,13 +1,16 @@
 :root {
-  --bg-page: #f8fafc;
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --slate-dark: #1e293b;
-  --sky-accent: #0284c7;
-  --sky-soft: #e0f2fe;
-  --sky-border: #bae6fd;
-  --card-bg: #ffffff;
-  --border-light: #e2e8f0;
+  --bg-pastel: #f0f8ff;
+  --bg-white: #ffffff;
+  --pastel-blue-light: #e0f2fe;
+  --pastel-blue-mid: #bae6fd;
+  --pastel-blue-border: #7dd3fc;
+  --pastel-blue-accent: #38bdf8;
+  --blue-primary: #0284c7;
+  --blue-dark: #0c4a6e;
+  --text-main: #1e3a5f;
+  --text-muted: #527196;
+  --shadow-soft: 0 10px 30px -5px rgba(56, 189, 248, 0.15);
+  --shadow-hover: 0 18px 36px -6px rgba(2, 132, 199, 0.22);
 }
 
 * {
@@ -18,61 +21,66 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: var(--bg-page);
+  background-color: var(--bg-pastel);
   color: var(--text-main);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 /* =========================================
-   POP-UP BLEU CIEL + FLOU PROGRESSIF
+   1. POP-UP -18 ANS (BLEU CIEL + FADE & FLOU)
    ========================================= */
 .age-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: rgba(15, 23, 42, 0);
+  background-color: rgba(224, 242, 254, 0);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition:
-    opacity 0.55s ease,
-    backdrop-filter 0.55s ease,
-    -webkit-backdrop-filter 0.55s ease,
-    background-color 0.55s ease,
-    visibility 0.55s ease;
+    opacity 0.6s ease,
+    backdrop-filter 0.6s ease,
+    -webkit-backdrop-filter 0.6s ease,
+    background-color 0.6s ease,
+    visibility 0.6s ease;
 }
 
 .age-overlay.is-visible {
   opacity: 1;
   visibility: visible;
-  background-color: rgba(15, 23, 42, 0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  pointer-events: auto;
+  background-color: rgba(186, 230, 253, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .age-modal {
   background: linear-gradient(145deg, #e0f2fe 0%, #bae6fd 100%);
-  border: 2px solid #7dd3fc;
-  border-radius: 28px;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
   max-width: 460px;
   width: 100%;
-  padding: 36px 30px;
+  padding: 38px 32px;
   text-align: center;
   box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.25);
-  transform: translateY(16px) scale(0.97);
+  transform: translateY(20px) scale(0.96);
   opacity: 0;
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
 }
 
 .age-overlay.is-visible .age-modal {
@@ -82,25 +90,26 @@ body {
 
 .age-badge {
   display: inline-block;
-  background-color: #0284c7;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: var(--blue-primary);
   font-weight: 800;
-  font-size: 1.1rem;
-  padding: 8px 18px;
+  font-size: 1.15rem;
+  padding: 8px 20px;
   border-radius: 999px;
   margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
 }
 
 .age-modal h2 {
-  color: #0c4a6e;
-  font-size: 1.5rem;
+  color: var(--blue-dark);
+  font-size: 1.55rem;
   margin-bottom: 12px;
 }
 
 .age-modal p {
   color: #0369a1;
-  font-size: 0.98rem;
-  margin-bottom: 12px;
+  font-size: 0.96rem;
+  margin-bottom: 14px;
 }
 
 .age-subtext {
@@ -115,44 +124,54 @@ body {
   gap: 10px;
 }
 
-.btn-primary {
-  background-color: #0284c7;
-  color: #ffffff;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 16px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+/* =========================================
+   2. MINI POP-UP SPONSO AVEC CROIX
+   ========================================= */
+.sponso-popup {
+  background: linear-gradient(90deg, #e0f2fe 0%, #f0f9ff 100%);
+  border-bottom: 1px solid var(--pastel-blue-border);
+  color: var(--blue-dark);
+  font-size: 0.88rem;
+  padding: 10px 0;
+  transition: opacity 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: #0369a1;
+.sponso-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
-.btn-secondary {
-  background-color: rgba(255, 255, 255, 0.65);
-  color: #0369a1;
-  border: 1px solid #7dd3fc;
-  padding: 11px 20px;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn-secondary:hover {
+.close-sponso {
   background-color: #ffffff;
+  border: 1px solid var(--pastel-blue-border);
+  color: var(--blue-primary);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.close-sponso:hover {
+  background-color: var(--pastel-blue-mid);
+  transform: scale(1.08);
 }
 
 /* =========================================
-   EN-TÊTE & NAVIGATION
+   3. EN-TÊTE PASTEL & NAVIGATION
    ========================================= */
 .site-header {
-  background-color: var(--slate-dark);
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--pastel-blue-light);
   padding: 16px 0;
   position: sticky;
   top: 0;
@@ -167,89 +186,245 @@ body {
 }
 
 .logo {
-  color: #ffffff;
+  color: var(--blue-dark);
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
-.logo-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #38bdf8;
+.logo-icon {
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+  color: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
 }
 
-.logo-ext {
-  color: #38bdf8;
-  font-size: 0.95rem;
+.logo span {
+  color: var(--blue-primary);
 }
 
 .main-nav {
   display: flex;
-  gap: 24px;
+  gap: 10px;
 }
 
 .main-nav a {
-  color: #cbd5e1;
+  color: var(--text-muted);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: #ffffff;
+  background-color: var(--pastel-blue-light);
+  color: var(--blue-primary);
 }
 
 .btn-discreet {
-  background-color: #334155;
-  color: #f8fafc;
-  border: 1px solid #475569;
-  padding: 8px 14px;
-  border-radius: 10px;
+  background-color: var(--pastel-blue-light);
+  color: var(--blue-dark);
+  border: 1px solid var(--pastel-blue-border);
+  padding: 8px 16px;
+  border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .btn-discreet:hover {
-  background-color: #ef4444;
-  border-color: #ef4444;
-}
-
-.affiliation-banner {
-  background-color: var(--sky-soft);
-  border-bottom: 1px solid var(--sky-border);
-  color: #0c4a6e;
-  font-size: 0.85rem;
-  padding: 10px 0;
-  text-align: center;
+  background-color: #fda4af;
+  border-color: #f43f5e;
+  color: #881337;
 }
 
 /* =========================================
-   HERO & BARRE DE FILTRES
+   4. BOUTONS GÉNÉRAUX
    ========================================= */
-.hero {
-  background-color: #ffffff;
-  border-bottom: 1px solid var(--border-light);
-  padding: 44px 0;
+.btn-primary {
+  display: inline-block;
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 16px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
   text-align: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.hero h1 {
+.btn-primary:hover {
+  background-color: #0369a1;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--blue-primary);
+  text-decoration: none;
+  border: 1px solid var(--pastel-blue-border);
+  padding: 11px 22px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--pastel-blue-light);
+}
+
+/* =========================================
+   5. HERO & GRANDES CASES D'ACCUEIL (PORTAIL)
+   ========================================= */
+.hero-portal {
+  text-align: center;
+  padding: 56px 20px 36px;
+}
+
+.hero-logo-big {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 2px solid var(--pastel-blue-mid);
+  padding: 14px 28px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-logo-big .logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+}
+
+.hero-logo-big .logo-text span {
+  color: var(--blue-primary);
+}
+
+.hero-portal h1 {
+  font-size: 2.1rem;
+  color: var(--blue-dark);
+  margin-bottom: 12px;
+}
+
+.hero-portal p {
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 20px 0 64px;
+}
+
+.portal-card {
+  background-color: var(--bg-white);
+  border: 2px solid var(--pastel-blue-mid);
+  border-radius: 26px;
+  padding: 32px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--pastel-blue-accent);
+}
+
+.portal-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2rem;
-  color: var(--slate-dark);
+  margin-bottom: 18px;
+}
+
+.portal-card h2 {
+  font-size: 1.35rem;
+  color: var(--blue-dark);
   margin-bottom: 10px;
 }
 
-.hero p {
+.portal-card p {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  margin-bottom: 22px;
+}
+
+.portal-link-btn {
+  background-color: var(--pastel-blue-light);
+  color: var(--blue-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  width: 100%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.portal-card:hover .portal-link-btn {
+  background-color: var(--blue-primary);
+  color: #ffffff;
+}
+
+/* =========================================
+   6. PAGES INTERNES (BOUTIQUES, BLOG, EVENTS...)
+   ========================================= */
+.page-hero {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--pastel-blue-light);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 1.9rem;
+  color: var(--blue-dark);
+  margin-bottom: 8px;
+}
+
+.page-hero p {
   color: var(--text-muted);
   max-width: 640px;
-  margin: 0 auto 28px;
+  margin: 0 auto;
 }
 
 .filters-bar {
@@ -257,24 +432,25 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  background-color: var(--bg-page);
+  background-color: var(--bg-pastel);
   padding: 16px;
-  border-radius: 16px;
-  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  border: 2px solid var(--pastel-blue-mid);
+  margin-top: 24px;
 }
 
 .filters-bar input[type="text"],
 .filters-bar select {
-  padding: 10px 14px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
+  padding: 11px 16px;
+  border: 1px solid var(--pastel-blue-border);
+  border-radius: 14px;
   font-size: 0.95rem;
   background-color: #ffffff;
   color: var(--text-main);
 }
 
 .filters-bar input[type="text"] {
-  min-width: 260px;
+  min-width: 250px;
   flex: 1;
 }
 
@@ -283,16 +459,15 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--blue-dark);
   padding: 0 10px;
   cursor: pointer;
 }
 
-/* =========================================
-   CARTES BOUTIQUES
-   ========================================= */
-.main-content {
-  padding: 40px 20px 64px;
+.page-section {
+  padding: 40px 0 64px;
+  flex: 1;
 }
 
 .results-header {
@@ -300,55 +475,57 @@ body {
 }
 
 .results-header h2 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
 }
 
-.boutiques-grid {
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 24px;
 }
 
-.shop-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-light);
-  border-radius: 18px;
+.item-card {
+  background-color: #ffffff;
+  border: 2px solid var(--pastel-blue-light);
+  border-radius: 24px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.shop-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+.item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pastel-blue-border);
 }
 
-.shop-top {
+.card-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
-.shop-title {
+.card-title {
   font-size: 1.25rem;
-  color: var(--slate-dark);
+  color: var(--blue-dark);
 }
 
-.shop-country {
-  font-size: 0.8rem;
-  background-color: #f1f5f9;
-  padding: 4px 10px;
+.badge-country {
+  font-size: 0.78rem;
+  background-color: var(--pastel-blue-light);
+  color: var(--blue-primary);
+  padding: 4px 12px;
   border-radius: 999px;
-  font-weight: 600;
-  color: var(--text-muted);
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.shop-tags {
+.tags-row {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -356,24 +533,25 @@ body {
 }
 
 .tag {
-  background-color: var(--sky-soft);
-  color: #0369a1;
+  background-color: var(--bg-pastel);
+  border: 1px solid var(--pastel-blue-mid);
+  color: var(--blue-primary);
   font-size: 0.78rem;
   font-weight: 600;
   padding: 3px 10px;
-  border-radius: 8px;
+  border-radius: 999px;
 }
 
-.shop-desc {
+.card-desc {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   margin-bottom: 18px;
 }
 
 .shop-meta {
-  background-color: #f8fafc;
-  border-radius: 12px;
-  padding: 12px;
+  background-color: var(--bg-pastel);
+  border-radius: 16px;
+  padding: 12px 14px;
   font-size: 0.85rem;
   margin-bottom: 18px;
   display: flex;
@@ -381,30 +559,102 @@ body {
   gap: 6px;
 }
 
-.btn-visit {
-  display: block;
-  text-align: center;
-  background-color: var(--slate-dark);
-  color: #ffffff;
-  text-decoration: none;
-  padding: 12px;
-  border-radius: 12px;
-  font-weight: 600;
-  transition: background-color 0.2s;
+/* =========================================
+   7. BLOCS LÉGAUX (RGPD, CGU, MENTIONS)
+   ========================================= */
+.legal-box {
+  background-color: #ffffff;
+  border: 2px solid var(--pastel-blue-light);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-soft);
 }
 
-.btn-visit:hover {
-  background-color: var(--sky-accent);
+.legal-box h2 {
+  color: var(--blue-dark);
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+.legal-box p,
+.legal-box li {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.legal-box ul {
+  padding-left: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 540px;
+  margin-top: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--pastel-blue-border);
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: var(--bg-pastel);
 }
 
 /* =========================================
-   PIED DE PAGE & MOBILE
+   8. BANDEAU RGPD / COOKIES & PIED DE PAGE
    ========================================= */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 2px solid var(--pastel-blue-border);
+  border-radius: 22px;
+  padding: 18px 22px;
+  box-shadow: 0 20px 40px rgba(12, 74, 110, 0.18);
+  z-index: 9000;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cookie-banner.is-active {
+  display: flex;
+}
+
+.cookie-banner p {
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+
+.cookie-banner a {
+  color: var(--blue-primary);
+  font-weight: 600;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 .site-footer {
-  background-color: var(--slate-dark);
-  color: #94a3b8;
-  padding: 30px 0;
+  background-color: #ffffff;
+  border-top: 2px solid var(--pastel-blue-light);
+  color: var(--text-muted);
+  padding: 28px 0;
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
 .footer-inner {
@@ -417,19 +667,34 @@ body {
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 .footer-links a {
-  color: #cbd5e1;
+  color: var(--blue-primary);
   text-decoration: none;
+  font-weight: 600;
 }
 
-@media (max-width: 680px) {
-  .main-nav {
-    display: none;
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    flex-wrap: wrap;
   }
-  .hero h1 {
-    font-size: 1.5rem;
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--pastel-blue-light);
+    flex-wrap: wrap;
+  }
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
   }
 }

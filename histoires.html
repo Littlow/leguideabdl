@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histoires & Récits — LeGuideABDL.fr</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
+    <div class="age-modal">
+      <div class="age-badge">-18 / 18+</div>
+      <h2>Accès réservé aux adultes</h2>
+      <p>Ce site s'adresse exclusivement à un public majeur (18 ans minimum).</p>
+      <div class="age-actions">
+        <button id="btn-enter" class="btn-primary">J'ai plus de 18 ans — Entrer</button>
+        <button id="btn-leave" class="btn-secondary">Quitter le site</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sponso-popup" class="sponso-popup">
+    <div class="container sponso-inner">
+      <span>✨ <strong>Espace Lecture :</strong> Tous les récits publiés mettent exclusivement en scène des adultes majeurs.</span>
+      <button id="close-sponso" class="close-sponso" title="Fermer">&times;</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">☁️</span>
+        <div>LeGuide<span>ABDL.fr</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="boutiques.html">Boutiques</a>
+        <a href="blog.html">Blog</a>
+        <a href="events.html">Events FR</a>
+        <a href="histoires.html" class="active">Histoires</a>
+      </nav>
+      <button id="btn-discreet" class="btn-discreet">👁️ Sortie rapide</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>📖 Histoires, Récits & Témoignages</h1>
+      <p>Partages d'expériences, récits cocooning et témoignages bienveillants de la communauté.</p>
+    </div>
+  </section>
+
+  <main class="container page-section">
+    <div class="cards-grid">
+      <article class="item-card">
+        <div>
+          <div class="tags-row"><span class="tag">Témoignage</span></div>
+          <h3 class="card-title">Ma première commande : dépasser l'appréhension</h3>
+          <p class="card-desc">Comment j'ai osé passer ma première commande en ligne, le choix du point relais et le sentiment de détente une fois le colis récupéré.</p>
+        </div>
+        <a href="legal.html#contact" class="btn-secondary">Partager un témoignage similaire</a>
+      </article>
+
+      <article class="item-card">
+        <div>
+          <div class="tags-row"><span class="tag">Récit Cosy</span></div>
+          <h3 class="card-title">Un week-end hors du temps</h3>
+          <p class="card-desc">Une parenthèse de douceur loin du rythme professionnel : chocolat chaud, plaid pastel et lâcher-prise complet à la maison.</p>
+        </div>
+        <a href="legal.html#contact" class="btn-secondary">Proposer une suite</a>
+      </article>
+
+      <article class="item-card">
+        <div>
+          <div class="tags-row"><span class="tag">Vos écrits</span></div>
+          <h3 class="card-title">Publier votre histoire sur LeGuideABDL</h3>
+          <p class="card-desc">Vous écrivez des histoires douces ou souhaitez raconter votre parcours sous pseudonyme ? Envoyez-nous votre texte via le formulaire.</p>
+        </div>
+        <a href="legal.html#contact" class="btn-primary">Envoyer mon histoire</a>
+      </article>
+    </div>
+  </main>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      🍪 <strong>RGPD :</strong> Stockage local uniquement technique. Consultez nos <a href="legal.html#cgu">CGU</a> et notre <a href="legal.html#rgpd">Politique RGPD</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="btn-accept-cookies" class="btn-primary">J'ai compris</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
+      <div class="footer-links">
+        <a href="legal.html#mentions">Mentions légales</a>
+        <a href="legal.html#cgu">CGU</a>
+        <a href="legal.html#rgpd">Politique RGPD</a>
+        <a href="legal.html#contact">Contact / Soumettre</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

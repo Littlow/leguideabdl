@@ -1,0 +1,54 @@
+[
+  {
+    "nom": "Diaper-Minister",
+    "pays": "🇫🇷 France",
+    "zone": "France",
+    "categories": ["Multimarques", "Couches", "Bodys", "Accessoires"],
+    "description": "Le plus grand distributeur spécialisé basé en France. Catalogue très complet (Rearz, Crinklz, ABU, Bambino) avec expédition rapide sans frais de douane.",
+    "discretionNote": 5,
+    "emballage": "Carton 100 % brun neutre sans logo",
+    "colisNeutre": true,
+    "pointRelais": true,
+    "libelleBancaire": "Société générique discrète",
+    "url": "https://www.diaper-minister.com"
+  },
+  {
+    "nom": "ABDL Factory",
+    "pays": "🇳🇱 Pays-Bas",
+    "zone": "Union Européenne",
+    "categories": ["Multimarques", "Couches", "Accessoires"],
+    "description": "Boutique européenne basée aux Pays-Bas proposant des packs d'essai à l'unité, des couches imprimées et des accessoires livrés partout en Europe.",
+    "discretionNote": 5,
+    "emballage": "Boîte neutre renforcée",
+    "colisNeutre": true,
+    "pointRelais": true,
+    "libelleBancaire": "Nom commercial neutre",
+    "url": "https://www.abdlfactory.com"
+  },
+  {
+    "nom": "Onesies Down Under",
+    "pays": "🇦🇺 Australie / Entrepôt UE",
+    "zone": "Union Européenne",
+    "categories": ["Bodys", "Accessoires"],
+    "description": "Référence mondiale des bodys adultes imprimés en coton stretch haute qualité, avec coupes spécialement pensées pour le maintien.",
+    "discretionNote": 4,
+    "emballage": "Pochette opaque neutre",
+    "colisNeutre": true,
+    "pointRelais": false,
+    "libelleBancaire": "ODU Apparel",
+    "url": "https://onesiesdownunder.com"
+  },
+  {
+    "nom": "Save Express",
+    "pays": "🇩🇪 Allemagne",
+    "zone": "Union Européenne",
+    "categories": ["Multimarques", "Couches"],
+    "description": "Grossiste allemand historique offrant des tarifs très compétitifs à la pièce ou au carton sur toutes les marques européennes et américaines.",
+    "discretionNote": 4,
+    "emballage": "Carton neutre (option discrète à cocher)",
+    "colisNeutre": true,
+    "pointRelais": true,
+    "libelleBancaire": "Save Express GmbH",
+    "url": "https://www.saveexpress.de"
+  }
+]

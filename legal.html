@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions Légales, CGU & RGPD — LeGuideABDL.fr</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">☁️</span>
+        <div>LeGuide<span>ABDL.fr</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="boutiques.html">Boutiques</a>
+        <a href="blog.html">Blog</a>
+        <a href="events.html">Events FR</a>
+        <a href="histoires.html">Histoires</a>
+      </nav>
+      <button id="btn-discreet" class="btn-discreet">👁️ Sortie rapide</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>⚖️ Informations Légales, CGU & RGPD</h1>
+      <p>Toutes les informations obligatoires concernant l'utilisation du site, la protection de vos données et nos engagements.</p>
+    </div>
+  </section>
+
+  <main class="container page-section">
+    <!-- 1. MENTIONS LÉGALES -->
+    <section id="mentions" class="legal-box">
+      <h2>1. Mentions Légales (LCEN)</h2>
+      <p><strong>Nom du site :</strong> LeGuideABDL.fr</p>
+      <p><strong>Statut :</strong> Portail d'information, comparateur et annuaire en ligne non marchand (aucune vente directe de produits n'est réalisée sur ce site).</p>
+      <p><strong>Hébergeur :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis (Site web : https://vercel.com).</p>
+      <p><strong>Propriété intellectuelle :</strong> Les marques et logos cités dans l'annuaire restent la propriété exclusive de leurs détenteurs respectifs et sont mentionnés à titre purement informatif et comparatif.</p>
+    </section>
+
+    <!-- 2. CONDITIONS GÉNÉRALES D'UTILISATION (CGU) -->
+    <section id="cgu" class="legal-box">
+      <h2>2. Conditions Générales d'Utilisation (CGU)</h2>
+      <ul>
+        <li><strong>Accès strictement réservé aux majeurs (+18 ans) :</strong> L'accès à LeGuideABDL.fr est strictement interdit aux personnes mineures. En naviguant sur le site, l'utilisateur atteste sur l'honneur être majeur dans son pays de résidence.</li>
+        <li><strong>Charte éthique :</strong> L'intégralité du site, des articles et des récits concerne exclusivement des pratiques entre adultes consentants. Tout contenu illicite est formellement banni.</li>
+        <li><strong>Liens externes et Affiliation :</strong> LeGuideABDL.fr propose des liens hypertextes vers des boutiques tierces. Certains liens sont affiliés (permettant de financer le site sans surcoût pour l'acheteur). LeGuideABDL.fr ne saurait être tenu responsable des commandes, livraisons ou litiges survenant sur ces sites tiers.</li>
+      </ul>
+    </section>
+
+    <!-- 3. POLITIQUE RGPD & COOKIES -->
+    <section id="rgpd" class="legal-box">
+      <h2>3. Politique de Confidentialité & Protection des Données (RGPD)</h2>
+      <ul>
+        <li><strong>Zéro pistage publicitaire :</strong> Nous n'utilisons aucun cookie publicitaire tiers ni revendeur de données personnelles.</li>
+        <li><strong>Stockage technique local (LocalStorage) :</strong> Le site enregistre uniquement sur votre propre appareil deux indicateurs techniques (`leguideabdl_age_ok` et `leguideabdl_rgpd_ok`) permettant de ne pas vous réafficher la pop-up +18 ans et le bandeau RGPD à chaque clic.</li>
+        <li><strong>Données de contact :</strong> Les informations envoyées volontairement via le formulaire ci-dessous servent uniquement à traiter votre demande (ajout de boutique, événement ou histoire) et ne sont jamais cédées à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de modification et de suppression sur simple demande.</li>
+      </ul>
+    </section>
+
+    <!-- 4. FORMULAIRE DE CONTACT / SOUMISSION -->
+    <section id="contact" class="legal-box">
+      <h2>4. Nous contacter / Soumettre une boutique, un event ou une histoire</h2>
+      <p>Remplissez ce formulaire pour proposer l'ajout d'une boutique dans l'annuaire, annoncer un Munch en France ou soumettre un récit :</p>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre message a bien été pris en compte.');">
+        <input type="text" placeholder="Votre pseudonyme ou nom de boutique" required>
+        <input type="email" placeholder="Votre adresse email (pour vous répondre)" required>
+        <input type="text" placeholder="Sujet (Boutique / Event FR / Histoire / Question RGPD)" required>
+        <textarea rows="5" placeholder="Votre message, lien de boutique ou texte..." required></textarea>
+        <button type="submit" class="btn-primary">Envoyer le message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
+      <div class="footer-links">
+        <a href="legal.html#mentions">Mentions légales</a>
+        <a href="legal.html#cgu">CGU</a>
+        <a href="legal.html#rgpd">Politique RGPD</a>
+        <a href="legal.html#contact">Contact / Soumettre</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

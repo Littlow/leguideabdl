@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeGuideABDL.fr — Annuaire, Comparateur & Guides ABDL</title>
+  <title>LeGuideABDL.fr — Portail, Boutiques, Blog, Events & Histoires</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- POP-UP VÉRIFICATION +18 ANS -->
+  <!-- POP-UP -18 ANS (BLEU CIEL & FLOU EN FADE) -->
   <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
     <div class="age-modal">
-      <div class="age-badge">18+</div>
+      <div class="age-badge">-18 / 18+</div>
       <h2>Accès réservé aux adultes</h2>
       <p>
-        <strong>LeGuideABDL.fr</strong> est un portail d'information, un comparateur et un annuaire dédié à l'univers ABDL entre adultes consentants.
+        <strong>LeGuideABDL.fr</strong> est un portail d'information, d'annuaire et d'échanges dédié à la communauté ABDL adulte.
       </p>
       <p class="age-subtext">
-        En entrant sur ce site, vous certifiez avoir atteint l'âge de la majorité légale dans votre pays de résidence (18 ans minimum).
+        En poursuivant votre visite, vous certifiez avoir au moins 18 ans et accepter nos conditions générales d'utilisation.
       </p>
       <div class="age-actions">
-        <button id="btn-enter" class="btn-primary">J'ai 18 ans ou plus — Entrer</button>
+        <button id="btn-enter" class="btn-primary">J'ai plus de 18 ans — Entrer</button>
         <button id="btn-leave" class="btn-secondary">Quitter le site</button>
       </div>
+    </div>
+  </div>
+
+  <!-- MINI POP-UP SPONSO AVEC CROIX -->
+  <div id="sponso-popup" class="sponso-popup">
+    <div class="container sponso-inner">
+      <span>✨ <strong>Info Partenaires :</strong> Certains liens vers les boutiques sont sponsorisés ou affiliés (sans aucun surcoût pour vous).</span>
+      <button id="close-sponso" class="close-sponso" title="Fermer">&times;</button>
     </div>
   </div>
 
@@ -30,77 +38,93 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-dot"></span>
-        LeGuide<strong>ABDL</strong><span class="logo-ext">.fr</span>
+        <span class="logo-icon">☁️</span>
+        <div>LeGuide<span>ABDL.fr</span></div>
       </a>
       <nav class="main-nav">
-        <a href="#annuaire" class="active">Annuaire</a>
-        <a href="#comparateur">Comparateur</a>
-        <a href="#guides">Guides</a>
+        <a href="index.html" class="active">Accueil</a>
+        <a href="boutiques.html">Boutiques</a>
+        <a href="blog.html">Blog</a>
+        <a href="events.html">Events FR</a>
+        <a href="histoires.html">Histoires</a>
       </nav>
-      <button id="btn-discreet" class="btn-discreet" title="Basculer immédiatement vers une page neutre">
-        👁️ Mode Discret
-      </button>
+      <button id="btn-discreet" class="btn-discreet">👁️ Sortie rapide</button>
     </div>
   </header>
 
-  <!-- BANDEAU TRANSPARENCE AFFILIATION -->
-  <div class="affiliation-banner">
-    <div class="container">
-      ℹ️ <strong>Transparence :</strong> Certains liens vers les boutiques sont des liens affiliés. Si vous passez commande, nous pouvons percevoir une petite commission sans aucun surcoût pour vous.
+  <!-- ACCUEIL AVEC LOGO CENTRAL ET LES 4 CASES DE REDIRECTION -->
+  <main class="container">
+    <section class="hero-portal">
+      <div class="hero-logo-big">
+        <span class="logo-icon">☁️</span>
+        <div class="logo-text">LeGuide<span>ABDL.fr</span></div>
+      </div>
+      <h1>Bienvenue sur le portail francophone ABDL</h1>
+      <p>Choisissez une rubrique ci-dessous pour explorer les boutiques vérifiées, lire nos guides pratiques, consulter l'agenda des événements en France ou découvrir les récits de la communauté.</p>
+    </section>
+
+    <section class="portal-grid">
+      <!-- CASE 1 : BOUTIQUES -->
+      <a href="boutiques.html" class="portal-card">
+        <div>
+          <div class="portal-icon">🛍️</div>
+          <h2>Annuaire Boutiques</h2>
+          <p>Répertoire complet des revendeurs européens de couches, bodys et accessoires avec note de discrétion des colis.</p>
+        </div>
+        <span class="portal-link-btn">Voir les boutiques →</span>
+      </a>
+
+      <!-- CASE 2 : BLOG -->
+      <a href="blog.html" class="portal-card">
+        <div>
+          <div class="portal-icon">📘</div>
+          <h2>Blog & Guides</h2>
+          <p>Tests de produits, comparatifs d'absorption, conseils pour commander en point relais et actualités.</p>
+        </div>
+        <span class="portal-link-btn">Lire le blog →</span>
+      </a>
+
+      <!-- CASE 3 : EVENTS FR -->
+      <a href="events.html" class="portal-card">
+        <div>
+          <div class="portal-icon">🗓️</div>
+          <h2>Events Français</h2>
+          <p>Calendrier des Munches, rencontres bienveillantes par région (Paris, Lyon, Bordeaux...) et conseils de sécurité.</p>
+        </div>
+        <span class="portal-link-btn">Voir les événements →</span>
+      </a>
+
+      <!-- CASE 4 : HISTOIRES -->
+      <a href="histoires.html" class="portal-card">
+        <div>
+          <div class="portal-icon">📖</div>
+          <h2>Histoires & Récits</h2>
+          <p>Témoignages de membres, fictions douces et espace pour partager vos propres textes anonymement.</p>
+        </div>
+        <span class="portal-link-btn">Découvrir les histoires →</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- BANDEAU RGPD / CGU -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      🍪 <strong>Respect de votre vie privée (RGPD) :</strong> Ce site utilise uniquement un stockage local technique pour mémoriser votre majorité (+18 ans), sans aucun traceur publicitaire. Consultez nos <a href="legal.html#cgu">CGU</a> et notre <a href="legal.html#rgpd">Politique RGPD</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="btn-accept-cookies" class="btn-primary">J'ai compris</button>
     </div>
   </div>
-
-  <!-- HERO & RECHERCHE -->
-  <section class="hero">
-    <div class="container">
-      <h1>Toutes les boutiques et ressources ABDL de confiance</h1>
-      <p>Comparez les revendeurs européens, vérifiez la discrétion des colis et trouvez les meilleurs tarifs en un clic.</p>
-      
-      <div class="filters-bar">
-        <input type="text" id="search-input" placeholder="Rechercher une boutique, une marque (Rearz, Crinklz...)">
-        
-        <select id="filter-category">
-          <option value="all">Toutes les catégories</option>
-          <option value="Couches">Couches adultes</option>
-          <option value="Bodys">Bodys & Vêtements</option>
-          <option value="Accessoires">Tétines & Accessoires</option>
-          <option value="Multimarques">Revendeur Multimarques</option>
-        </select>
-
-        <select id="filter-country">
-          <option value="all">Tous les pays d'envoi</option>
-          <option value="France">🇫🇷 France</option>
-          <option value="Union Européenne">🇪🇺 Union Européenne (Sans douane)</option>
-          <option value="International">🌍 Hors UE</option>
-        </select>
-
-        <label class="checkbox-filter">
-          <input type="checkbox" id="filter-discreet">
-          <span>Colis 100 % neutre</span>
-        </label>
-      </div>
-    </div>
-  </section>
-
-  <!-- GRILLE DE L'ANNUAIRE -->
-  <main id="annuaire" class="container main-content">
-    <div class="results-header">
-      <h2 id="results-count">Chargement des boutiques...</h2>
-    </div>
-    <div id="boutiques-grid" class="boutiques-grid">
-      <!-- Les cartes boutiques s'injectent ici via app.js -->
-    </div>
-  </main>
 
   <!-- PIED DE PAGE -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail communautaire réservé aux adultes (+18 ans).</p>
+      <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
       <div class="footer-links">
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique RGPD</a>
-        <a href="#">Soumettre une boutique</a>
+        <a href="legal.html#mentions">Mentions légales</a>
+        <a href="legal.html#cgu">CGU</a>
+        <a href="legal.html#rgpd">Politique RGPD</a>
+        <a href="legal.html#contact">Contact / Soumettre</a>
       </div>
     </div>
   </footer>
