@@ -12,30 +12,6 @@
     "images": []
   },
   {
-    "id": "Zizizozo",
-    "titre": "Lupilapila",
-    "ville": "Nantes",
-    "date": "Bah samedi",
-    "heure": "Tu te demerde",
-    "lieu": "Chez oim",
-    "banniere": "assets/images/banniere-event.svg",
-    "resume": "Test du chien suspicieux",
-    "texte": "Ici vous retrouver des chiens malicieux",
-    "images": []
-  },
-  {
-    "id": "lupilapila",
-    "titre": "Lupilapila",
-    "ville": "📍 France",
-    "date": "",
-    "heure": "",
-    "lieu": "",
-    "banniere": "assets/images/banniere-event.svg",
-    "resume": "Test du chien suspicieux",
-    "texte": "Ici vous retrouver des chiens malicieux",
-    "images": []
-  },
-  {
     "id": "lupilapila",
     "titre": "Lupilapila",
     "ville": "📍 France",
