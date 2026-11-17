@@ -66,13 +66,14 @@
     <section id="contact" class="legal-box">
       <h2>4. Nous contacter / Soumettre une boutique, un event ou une histoire</h2>
       <p>Remplissez ce formulaire pour proposer l'ajout d'une boutique dans l'annuaire, annoncer un Munch en France ou soumettre un récit :</p>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre message a bien été pris en compte.');">
-        <input type="text" placeholder="Votre pseudonyme ou nom de boutique" required>
-        <input type="email" placeholder="Votre adresse email (pour vous répondre)" required>
-        <input type="text" placeholder="Sujet (Boutique / Event FR / Histoire / Question RGPD)" required>
-        <textarea rows="5" placeholder="Votre message, lien de boutique ou texte..." required></textarea>
-        <button type="submit" class="btn-primary">Envoyer le message</button>
-      </form>
+      <form class="contact-form" action="https://formspree.io/f/mjywwyjq" method="POST">
+  <input type="text" name="nom" placeholder="Votre pseudonyme ou nom de boutique" required>
+  <input type="email" name="email" placeholder="Votre adresse email (pour vous répondre)" required>
+  <input type="text" name="sujet" placeholder="Sujet (Boutique / Event FR / Histoire / Question RGPD)" required>
+  <textarea name="message" rows="5" placeholder="Votre message, lien de boutique ou texte..." required></textarea>
+  <button type="submit" class="btn-primary">Envoyer le message</button>
+</form>
+
     </section>
   </main>
 
