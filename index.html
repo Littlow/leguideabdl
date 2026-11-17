@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- POP-UP -18 ANS (BLEU CIEL & FLOU EN FADE) -->
   <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
     <div class="age-modal">
@@ -34,25 +33,42 @@
     </div>
   </div>
 
-  <!-- EN-TÊTE -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">☁️</span>
-        <div>LeGuide<span>ABDL.fr</span></div>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="boutiques.html">Boutiques</a>
-        <a href="blog.html">Blog</a>
-        <a href="events.html">Events FR</a>
-        <a href="histoires.html">Histoires</a>
-      </nav>
-      <button id="btn-discreet" class="btn-discreet">👁️ Sortie rapide</button>
+  <!-- VOLET DU HAUT COMPACT ET RÉTRACTABLE -->
+  <header id="site-header" class="site-header">
+    <div class="header-expanded">
+      <div class="container">
+        <div class="header-top-row">
+          <a href="./index.html" class="logo">
+            <span class="logo-icon">☁️</span>
+            <div>LeGuide<span>ABDL.fr</span></div>
+          </a>
+          <div class="header-actions">
+            <button type="button" class="btn-discreet js-discreet-exit" title="Quitter immédiatement">👁️ Sortie rapide</button>
+            <button type="button" id="btn-collapse-header" class="btn-toggle-header" title="Réduire le volet du haut">Réduire ▲</button>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <a href="./index.html" class="active">Accueil</a>
+          <a href="./boutiques.html" class="">Boutiques</a>
+          <a href="./blog.html" class="">Blog</a>
+          <a href="./events.html" class="">Events FR</a>
+          <a href="./histoires.html" class="">Histoires</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Barre réduite quand on clique sur Réduire -->
+    <div class="header-collapsed-bar">
+      <div class="container header-collapsed-inner">
+        <a href="./index.html" class="collapsed-brand">☁️ LeGuideABDL.fr</a>
+        <div class="header-actions">
+          <button type="button" class="btn-discreet js-discreet-exit">👁️ Sortie</button>
+          <button type="button" id="btn-expand-header" class="btn-toggle-header">Menu ▼</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- ACCUEIL AVEC LOGO CENTRAL ET LES 4 CASES DE REDIRECTION -->
   <main class="container">
     <section class="hero-portal">
       <div class="hero-logo-big">
@@ -63,44 +79,33 @@
       <p>Choisissez une rubrique ci-dessous pour explorer les boutiques vérifiées, lire nos guides pratiques, consulter l'agenda des événements en France ou découvrir les récits de la communauté.</p>
     </section>
 
+    <!-- LES 4 GRANDES CASES ALIGNÉES VERTICALEMENT LES UNES AU-DESSUS DES AUTRES -->
     <section class="portal-grid">
-      <!-- CASE 1 : BOUTIQUES -->
       <a href="boutiques.html" class="portal-card">
-        <div>
-          <div class="portal-icon">🛍️</div>
-          <h2>Annuaire Boutiques</h2>
-          <p>Répertoire complet des revendeurs européens de couches, bodys et accessoires avec note de discrétion des colis.</p>
-        </div>
+        <div class="portal-icon">🛍️</div>
+        <h2>Annuaire Boutiques</h2>
+        <p>Répertoire complet des revendeurs européens de couches, bodys et accessoires avec note de discrétion des colis.</p>
         <span class="portal-link-btn">Voir les boutiques →</span>
       </a>
 
-      <!-- CASE 2 : BLOG -->
       <a href="blog.html" class="portal-card">
-        <div>
-          <div class="portal-icon">📘</div>
-          <h2>Blog & Guides</h2>
-          <p>Tests de produits, comparatifs d'absorption, conseils pour commander en point relais et actualités.</p>
-        </div>
+        <div class="portal-icon">📘</div>
+        <h2>Blog & Guides</h2>
+        <p>Tests de produits, comparatifs d'absorption, conseils pour commander en point relais et actualités.</p>
         <span class="portal-link-btn">Lire le blog →</span>
       </a>
 
-      <!-- CASE 3 : EVENTS FR -->
       <a href="events.html" class="portal-card">
-        <div>
-          <div class="portal-icon">🗓️</div>
-          <h2>Events Français</h2>
-          <p>Calendrier des Munches, rencontres bienveillantes par région (Paris, Lyon, Bordeaux...) et conseils de sécurité.</p>
-        </div>
+        <div class="portal-icon">🗓️</div>
+        <h2>Events Français</h2>
+        <p>Calendrier des Munches, rencontres bienveillantes par région (Paris, Lyon, Sud-Ouest...) et informations pratiques.</p>
         <span class="portal-link-btn">Voir les événements →</span>
       </a>
 
-      <!-- CASE 4 : HISTOIRES -->
       <a href="histoires.html" class="portal-card">
-        <div>
-          <div class="portal-icon">📖</div>
-          <h2>Histoires & Récits</h2>
-          <p>Témoignages de membres, fictions douces et espace pour partager vos propres textes anonymement.</p>
-        </div>
+        <div class="portal-icon">📖</div>
+        <h2>Histoires & Récits</h2>
+        <p>Témoignages de membres, fictions douces et espace pour partager vos propres textes anonymement.</p>
         <span class="portal-link-btn">Découvrir les histoires →</span>
       </a>
     </section>
@@ -109,7 +114,7 @@
   <!-- BANDEAU RGPD / CGU -->
   <div id="cookie-banner" class="cookie-banner">
     <p>
-      🍪 <strong>Respect de votre vie privée (RGPD) :</strong> Ce site utilise uniquement un stockage local technique pour mémoriser votre majorité (+18 ans), sans aucun traceur publicitaire. Consultez nos <a href="legal.html#cgu">CGU</a> et notre <a href="legal.html#rgpd">Politique RGPD</a>.
+      🍪 <strong>Respect de votre vie privée (RGPD) :</strong> Ce site utilise uniquement un stockage local technique pour mémoriser votre majorité (+18 ans), sans aucun traceur publicitaire. Consultez nos <a href="./legal.html#cgu">CGU</a> et notre <a href="./legal.html#rgpd">Politique RGPD</a>.
     </p>
     <div class="cookie-actions">
       <button id="btn-accept-cookies" class="btn-primary">J'ai compris</button>
@@ -121,14 +126,13 @@
     <div class="container footer-inner">
       <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
       <div class="footer-links">
-        <a href="legal.html#mentions">Mentions légales</a>
-        <a href="legal.html#cgu">CGU</a>
-        <a href="legal.html#rgpd">Politique RGPD</a>
-        <a href="legal.html#contact">Contact / Soumettre</a>
+        <a href="./legal.html#mentions">Mentions légales</a>
+        <a href="./legal.html#cgu">CGU</a>
+        <a href="./legal.html#rgpd">Politique RGPD</a>
+        <a href="./legal.html#contact">Contact / Soumettre</a>
       </div>
     </div>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>

@@ -7,12 +7,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <!-- POP-UP -18 ANS (BLEU CIEL & FLOU EN FADE) -->
   <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
     <div class="age-modal">
       <div class="age-badge">-18 / 18+</div>
       <h2>Accès réservé aux adultes</h2>
-      <p>Ce site s'adresse exclusivement à un public majeur (18 ans minimum).</p>
+      <p>
+        <strong>LeGuideABDL.fr</strong> est un portail d'information, d'annuaire et d'échanges dédié à la communauté ABDL adulte.
+      </p>
+      <p class="age-subtext">
+        En poursuivant votre visite, vous certifiez avoir au moins 18 ans et accepter nos conditions générales d'utilisation.
+      </p>
       <div class="age-actions">
         <button id="btn-enter" class="btn-primary">J'ai plus de 18 ans — Entrer</button>
         <button id="btn-leave" class="btn-secondary">Quitter le site</button>
@@ -20,100 +25,87 @@
     </div>
   </div>
 
+  <!-- MINI POP-UP SPONSO AVEC CROIX -->
   <div id="sponso-popup" class="sponso-popup">
     <div class="container sponso-inner">
-      <span>✨ <strong>Agenda Communautaire :</strong> Vous organisez un événement en France ? Proposez-le via notre formulaire.</span>
+      <span>✨ <strong>Info Partenaires :</strong> Certains liens vers les boutiques sont sponsorisés ou affiliés (sans aucun surcoût pour vous).</span>
       <button id="close-sponso" class="close-sponso" title="Fermer">&times;</button>
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">☁️</span>
-        <div>LeGuide<span>ABDL.fr</span></div>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Accueil</a>
-        <a href="boutiques.html">Boutiques</a>
-        <a href="blog.html">Blog</a>
-        <a href="events.html" class="active">Events FR</a>
-        <a href="histoires.html">Histoires</a>
-      </nav>
-      <button id="btn-discreet" class="btn-discreet">👁️ Sortie rapide</button>
+  <!-- VOLET DU HAUT COMPACT ET RÉTRACTABLE -->
+  <header id="site-header" class="site-header">
+    <div class="header-expanded">
+      <div class="container">
+        <div class="header-top-row">
+          <a href="./index.html" class="logo">
+            <span class="logo-icon">☁️</span>
+            <div>LeGuide<span>ABDL.fr</span></div>
+          </a>
+          <div class="header-actions">
+            <button type="button" class="btn-discreet js-discreet-exit" title="Quitter immédiatement">👁️ Sortie rapide</button>
+            <button type="button" id="btn-collapse-header" class="btn-toggle-header" title="Réduire le volet du haut">Réduire ▲</button>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <a href="./index.html" class="">Accueil</a>
+          <a href="./boutiques.html" class="">Boutiques</a>
+          <a href="./blog.html" class="">Blog</a>
+          <a href="./events.html" class="active">Events FR</a>
+          <a href="./histoires.html" class="">Histoires</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Barre réduite quand on clique sur Réduire -->
+    <div class="header-collapsed-bar">
+      <div class="container header-collapsed-inner">
+        <a href="./index.html" class="collapsed-brand">☁️ LeGuideABDL.fr</a>
+        <div class="header-actions">
+          <button type="button" class="btn-discreet js-discreet-exit">👁️ Sortie</button>
+          <button type="button" id="btn-expand-header" class="btn-toggle-header">Menu ▼</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <section class="page-hero">
     <div class="container">
       <h1>🗓️ Agenda des Events & Munches en France</h1>
-      <p>Rencontres conviviales entre adultes, sorties et rassemblements régionaux.</p>
+      <p>Cliquez sur un événement pour consulter sa fiche complète (horaires, lieu et modalités d'inscription).</p>
     </div>
   </section>
 
   <main class="container page-section">
     <div class="legal-box">
-      <h2>🛡️ Qu'est-ce qu'un Munch et quelles sont les règles ?</h2>
-      <p>Un <strong>Munch</strong> est une rencontre amicale en tenue civile classique dans un lieu public (salon de thé, café, restaurant) permettant d'échanger en toute simplicité et en sécurité. L'accès est strictement réservé aux majeurs (+18 ans) après inscription auprès des modérateurs locaux.</p>
+      <h2>🛡️ Qu'est-ce qu'un Munch ?</h2>
+      <p>Un <strong>Munch</strong> est une rencontre amicale en tenue civile classique dans un lieu public (salon de thé, café, bar à jeux) permettant d'échanger en toute sécurité entre majeurs (+18 ans).</p>
     </div>
-
-    <div class="cards-grid">
-      <article class="item-card">
-        <div>
-          <div class="card-top">
-            <h3 class="card-title">Munch Mensuel Paris</h3>
-            <span class="badge-country">📍 Île-de-France</span>
-          </div>
-          <p class="card-desc">Rencontre mensuelle le samedi après-midi autour d'un goûter convivial. Ouvert aux nouveaux membres après présentation.</p>
-        </div>
-        <a href="legal.html#contact" class="btn-primary">Demander les infos / Inscrire un event</a>
-      </article>
-
-      <article class="item-card">
-        <div>
-          <div class="card-top">
-            <h3 class="card-title">Après-midi Jeux Lyon</h3>
-            <span class="badge-country">📍 Rhône-Alpes</span>
-          </div>
-          <p class="card-desc">Rassemblement bimestriel dans un bar à jeux privatisé ou espace calme pour discuter et faire connaissance dans la région lyonnaise.</p>
-        </div>
-        <a href="legal.html#contact" class="btn-primary">Demander les infos / Inscrire un event</a>
-      </article>
-
-      <article class="item-card">
-        <div>
-          <div class="card-top">
-            <h3 class="card-title">Rencontre Sud-Ouest</h3>
-            <span class="badge-country">📍 Nouvelle-Aquitaine</span>
-          </div>
-          <p class="card-desc">Sortie conviviale trimestrielle réunissant les membres de Bordeaux, Toulouse et de la côte basque/landaise.</p>
-        </div>
-        <a href="legal.html#contact" class="btn-primary">Demander les infos / Inscrire un event</a>
-      </article>
-    </div>
+    <div id="events-grid" class="cards-grid"></div>
   </main>
 
+  <!-- BANDEAU RGPD / CGU -->
   <div id="cookie-banner" class="cookie-banner">
     <p>
-      🍪 <strong>RGPD :</strong> Stockage local uniquement technique. Consultez nos <a href="legal.html#cgu">CGU</a> et notre <a href="legal.html#rgpd">Politique RGPD</a>.
+      🍪 <strong>Respect de votre vie privée (RGPD) :</strong> Ce site utilise uniquement un stockage local technique pour mémoriser votre majorité (+18 ans), sans aucun traceur publicitaire. Consultez nos <a href="./legal.html#cgu">CGU</a> et notre <a href="./legal.html#rgpd">Politique RGPD</a>.
     </p>
     <div class="cookie-actions">
       <button id="btn-accept-cookies" class="btn-primary">J'ai compris</button>
     </div>
   </div>
 
+  <!-- PIED DE PAGE -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
       <div class="footer-links">
-        <a href="legal.html#mentions">Mentions légales</a>
-        <a href="legal.html#cgu">CGU</a>
-        <a href="legal.html#rgpd">Politique RGPD</a>
-        <a href="legal.html#contact">Contact / Soumettre</a>
+        <a href="./legal.html#mentions">Mentions légales</a>
+        <a href="./legal.html#cgu">CGU</a>
+        <a href="./legal.html#rgpd">Politique RGPD</a>
+        <a href="./legal.html#contact">Contact / Soumettre</a>
       </div>
     </div>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>

@@ -7,12 +7,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <!-- POP-UP -18 ANS (BLEU CIEL & FLOU EN FADE) -->
   <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
     <div class="age-modal">
       <div class="age-badge">-18 / 18+</div>
       <h2>Accès réservé aux adultes</h2>
-      <p>Ce site s'adresse exclusivement à un public majeur (18 ans minimum).</p>
+      <p>
+        <strong>LeGuideABDL.fr</strong> est un portail d'information, d'annuaire et d'échanges dédié à la communauté ABDL adulte.
+      </p>
+      <p class="age-subtext">
+        En poursuivant votre visite, vous certifiez avoir au moins 18 ans et accepter nos conditions générales d'utilisation.
+      </p>
       <div class="age-actions">
         <button id="btn-enter" class="btn-primary">J'ai plus de 18 ans — Entrer</button>
         <button id="btn-leave" class="btn-secondary">Quitter le site</button>
@@ -20,89 +25,83 @@
     </div>
   </div>
 
+  <!-- MINI POP-UP SPONSO AVEC CROIX -->
   <div id="sponso-popup" class="sponso-popup">
     <div class="container sponso-inner">
-      <span>✨ <strong>Info Partenaires :</strong> Certains liens présents dans nos guides sont affiliés.</span>
+      <span>✨ <strong>Info Partenaires :</strong> Certains liens vers les boutiques sont sponsorisés ou affiliés (sans aucun surcoût pour vous).</span>
       <button id="close-sponso" class="close-sponso" title="Fermer">&times;</button>
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">☁️</span>
-        <div>LeGuide<span>ABDL.fr</span></div>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Accueil</a>
-        <a href="boutiques.html">Boutiques</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="events.html">Events FR</a>
-        <a href="histoires.html">Histoires</a>
-      </nav>
-      <button id="btn-discreet" class="btn-discreet">👁️ Sortie rapide</button>
+  <!-- VOLET DU HAUT COMPACT ET RÉTRACTABLE -->
+  <header id="site-header" class="site-header">
+    <div class="header-expanded">
+      <div class="container">
+        <div class="header-top-row">
+          <a href="./index.html" class="logo">
+            <span class="logo-icon">☁️</span>
+            <div>LeGuide<span>ABDL.fr</span></div>
+          </a>
+          <div class="header-actions">
+            <button type="button" class="btn-discreet js-discreet-exit" title="Quitter immédiatement">👁️ Sortie rapide</button>
+            <button type="button" id="btn-collapse-header" class="btn-toggle-header" title="Réduire le volet du haut">Réduire ▲</button>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <a href="./index.html" class="">Accueil</a>
+          <a href="./boutiques.html" class="">Boutiques</a>
+          <a href="./blog.html" class="active">Blog</a>
+          <a href="./events.html" class="">Events FR</a>
+          <a href="./histoires.html" class="">Histoires</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Barre réduite quand on clique sur Réduire -->
+    <div class="header-collapsed-bar">
+      <div class="container header-collapsed-inner">
+        <a href="./index.html" class="collapsed-brand">☁️ LeGuideABDL.fr</a>
+        <div class="header-actions">
+          <button type="button" class="btn-discreet js-discreet-exit">👁️ Sortie</button>
+          <button type="button" id="btn-expand-header" class="btn-toggle-header">Menu ▼</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <section class="page-hero">
     <div class="container">
       <h1>📘 Blog, Tests & Guides Pratiques</h1>
-      <p>Comparatifs d'absorption, conseils pour débutants et astuces d'expédition discrète.</p>
+      <p>Cliquez sur un article ci-dessous pour ouvrir sa page complète avec nos conseils détaillés.</p>
     </div>
   </section>
 
   <main class="container page-section">
-    <div class="cards-grid">
-      <article class="item-card">
-        <div>
-          <div class="tags-row"><span class="tag">Guide Discrétion</span></div>
-          <h3 class="card-title">Comment commander en point relais ou Locker en toute sérénité ?</h3>
-          <p class="card-desc">Emballages bruns anonymes, nom d'expéditeur neutre et retrait automatique : toutes les astuces pour éviter les regards indiscrets.</p>
-        </div>
-        <a href="boutiques.html" class="btn-secondary">Voir les boutiques 100 % neutres</a>
-      </article>
-
-      <article class="item-card">
-        <div>
-          <div class="tags-row"><span class="tag">Comparatif</span></div>
-          <h3 class="card-title">Finition plastique (PE) ou tissu respirant : que choisir ?</h3>
-          <p class="card-desc">Analyse du confort thermique, du maintien des attaches et de la discrétion sonore selon votre usage de jour ou de nuit.</p>
-        </div>
-        <a href="boutiques.html" class="btn-secondary">Comparer les marques</a>
-      </article>
-
-      <article class="item-card">
-        <div>
-          <div class="tags-row"><span class="tag">Guide des Tailles</span></div>
-          <h3 class="card-title">Bien choisir la taille de son body adulte</h3>
-          <p class="card-desc">Comment mesurer son buste et pourquoi il est souvent conseillé de prévoir une marge d'aisance supplémentaire.</p>
-        </div>
-        <a href="boutiques.html" class="btn-secondary">Voir les créateurs de bodys</a>
-      </article>
-    </div>
+    <div id="blog-grid" class="cards-grid"></div>
   </main>
 
+  <!-- BANDEAU RGPD / CGU -->
   <div id="cookie-banner" class="cookie-banner">
     <p>
-      🍪 <strong>RGPD :</strong> Stockage local uniquement technique. Consultez nos <a href="legal.html#cgu">CGU</a> et notre <a href="legal.html#rgpd">Politique RGPD</a>.
+      🍪 <strong>Respect de votre vie privée (RGPD) :</strong> Ce site utilise uniquement un stockage local technique pour mémoriser votre majorité (+18 ans), sans aucun traceur publicitaire. Consultez nos <a href="./legal.html#cgu">CGU</a> et notre <a href="./legal.html#rgpd">Politique RGPD</a>.
     </p>
     <div class="cookie-actions">
       <button id="btn-accept-cookies" class="btn-primary">J'ai compris</button>
     </div>
   </div>
 
+  <!-- PIED DE PAGE -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
       <div class="footer-links">
-        <a href="legal.html#mentions">Mentions légales</a>
-        <a href="legal.html#cgu">CGU</a>
-        <a href="legal.html#rgpd">Politique RGPD</a>
-        <a href="legal.html#contact">Contact / Soumettre</a>
+        <a href="./legal.html#mentions">Mentions légales</a>
+        <a href="./legal.html#cgu">CGU</a>
+        <a href="./legal.html#rgpd">Politique RGPD</a>
+        <a href="./legal.html#contact">Contact / Soumettre</a>
       </div>
     </div>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>
