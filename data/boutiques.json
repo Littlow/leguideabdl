@@ -1,5 +1,22 @@
 [
   {
+    "id": "lngu",
+    "nom": "LNGU",
+    "pays": "France",
+    "zone": "France",
+    "categories": [
+      "Couche",
+      "Body"
+    ],
+    "description": "Fondé par des ABDL françaises pour la communauté, LNGU est aujourd'hui reconnu parmi les plus grosses marques de la communauté. Avec ses assortiments de couches reconnaissables à leurs couleurs pastel comme les Honey Tales ou les Rainbow Pastel Color et leurs bodys à thème, \"Little Needs to Grow Up\" (LNGU) sait se démarquer visuellement autant que qualitativement. Le collectif qui a fait ses débuts aux cotés de Diaper Minister sait nous rendre impatient de ses futures sorties avant qu'elles ne soient sold-out.",
+    "discretionNote": 5,
+    "emballage": "",
+    "colisNeutre": false,
+    "pointRelais": true,
+    "libelleBancaire": "",
+    "url": "https://lngu-abdl.fr/"
+  },
+  {
     "id": "diaper-minister",
     "nom": "Diaper-Minister",
     "pays": "🇫🇷 France",
