@@ -1,0 +1,40 @@
+[
+  {
+    "id": "munch-paris",
+    "titre": "Munch Mensuel Parisien",
+    "ville": "📍 Paris / Île-de-France",
+    "date": "Samedi 12 Décembre 2026",
+    "heure": "14h30 - 18h00",
+    "lieu": "Salon de thé calme (Paris centre, communiqué après validation)",
+    "banniere": "assets/images/banniere-event.svg",
+    "resume": "Rencontre mensuelle le samedi après-midi autour d'un goûter convivial. Ouvert aux nouveaux membres majeurs après présentation.",
+    "texte": "Le Munch mensuel parisien est l'occasion idéale pour échanger dans un cadre détendu, bienveillant et 100 % en tenue civile classique (dress code : vanille).\n\nQue vous soyez nouveau dans la communauté ou habitué des rencontres, l'équipe d'accueil veille à ce que chacun puisse discuter à son rythme autour d'une boisson chaude ou d'une pâtisserie.\n\nPour garantir la sécurité et la discrétion de tous les participants, l'adresse exacte du lieu à Paris est transmise uniquement après une courte prise de contact via le formulaire du site.",
+    "images": [
+      "assets/images/illustration-1.svg"
+    ]
+  },
+  {
+    "id": "rencontre-lyon",
+    "titre": "Après-midi Jeux de Société à Lyon",
+    "ville": "📍 Lyon / Rhône-Alpes",
+    "date": "Samedi 19 Décembre 2026",
+    "heure": "15h00 - 19h00",
+    "lieu": "Bar à jeux partenaire (Lyon Presqu'île)",
+    "banniere": "assets/images/banniere-event.svg",
+    "resume": "Rassemblement bimestriel dans un espace calme pour discuter, jouer et faire connaissance dans la région lyonnaise.",
+    "texte": "Retrouvez les membres de la région Auvergne-Rhône-Alpes autour d'une sélection de jeux de société coopératifs et d'ambiance.\n\nLe format jeux de société permet de briser la glace très facilement, même pour les personnes les plus timides lors d'une première rencontre.\n\nInscription obligatoire au préalable pour réserver le bon nombre de tables auprès de l'établissement.",
+    "images": []
+  },
+  {
+    "id": "gouter-sud-ouest",
+    "titre": "Rencontre & Goûter Sud-Ouest",
+    "ville": "📍 Bordeaux & Côte Basque",
+    "date": "Dimanche 10 Janvier 2027",
+    "heure": "15h00 - 18h30",
+    "lieu": "Centre-ville (Bordeaux / Bayonne en alternance)",
+    "banniere": "assets/images/banniere-event.svg",
+    "resume": "Sortie conviviale trimestrielle réunissant les membres de Nouvelle-Aquitaine et d'Occitanie.",
+    "texte": "Ce rendez-vous trimestriel permet aux membres du Sud-Ouest de se retrouver sans avoir à monter jusqu'à Paris.\n\nLa rencontre se déroule en deux temps : un accueil café/goûter dans un salon calme, suivi pour ceux qui le souhaitent d'une balade en petit groupe.\n\nContactez l'équipe via le formulaire en précisant votre ville pour recevoir les informations de covoiturage et le point de rendez-vous.",
+    "images": []
+  }
+]

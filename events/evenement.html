@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détail — LeGuideABDL.fr</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- POP-UP -18 ANS (BLEU CIEL & FLOU EN FADE) -->
+  <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
+    <div class="age-modal">
+      <div class="age-badge">-18 / 18+</div>
+      <h2>Accès réservé aux adultes</h2>
+      <p>
+        <strong>LeGuideABDL.fr</strong> est un portail d'information, d'annuaire et d'échanges dédié à la communauté ABDL adulte.
+      </p>
+      <p class="age-subtext">
+        En poursuivant votre visite, vous certifiez avoir au moins 18 ans et accepter nos conditions générales d'utilisation.
+      </p>
+      <div class="age-actions">
+        <button id="btn-enter" class="btn-primary">J'ai plus de 18 ans — Entrer</button>
+        <button id="btn-leave" class="btn-secondary">Quitter le site</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MINI POP-UP SPONSO AVEC CROIX -->
+  <div id="sponso-popup" class="sponso-popup">
+    <div class="container sponso-inner">
+      <span>✨ <strong>Info Partenaires :</strong> Certains liens vers les boutiques sont sponsorisés ou affiliés (sans aucun surcoût pour vous).</span>
+      <button id="close-sponso" class="close-sponso" title="Fermer">&times;</button>
+    </div>
+  </div>
+
+  <!-- VOLET DU HAUT COMPACT ET RÉTRACTABLE -->
+  <header id="site-header" class="site-header">
+    <div class="header-expanded">
+      <div class="container">
+        <div class="header-top-row">
+          <a href="../index.html" class="logo">
+            <span class="logo-icon">☁️</span>
+            <div>LeGuide<span>ABDL.fr</span></div>
+          </a>
+          <div class="header-actions">
+            <button type="button" class="btn-discreet js-discreet-exit" title="Quitter immédiatement">👁️ Sortie rapide</button>
+            <button type="button" id="btn-collapse-header" class="btn-toggle-header" title="Réduire le volet du haut">Réduire ▲</button>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <a href="../index.html" class="">Accueil</a>
+          <a href="../boutiques.html" class="">Boutiques</a>
+          <a href="../blog.html" class="">Blog</a>
+          <a href="../events.html" class="active">Events FR</a>
+          <a href="../histoires.html" class="">Histoires</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Barre réduite quand on clique sur Réduire -->
+    <div class="header-collapsed-bar">
+      <div class="container header-collapsed-inner">
+        <a href="../index.html" class="collapsed-brand">☁️ LeGuideABDL.fr</a>
+        <div class="header-actions">
+          <button type="button" class="btn-discreet js-discreet-exit">👁️ Sortie</button>
+          <button type="button" id="btn-expand-header" class="btn-toggle-header">Menu ▼</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="detail-page-container" data-type="event" class="container detail-wrapper">
+    <a href="../events.html" class="back-link">← Retour à l'agenda des Events</a>
+
+    <!-- GRANDE IMAGE EN BANDEAU HORIZONTAL EN HAUT -->
+    <div class="detail-banner">
+      <img id="detail-banner-img" src="../assets/images/banniere-event.svg" alt="Bannière">
+    </div>
+
+    <!-- MISE EN PAGE 2 COLONNES : CONTENU PRINCIPAL + VOLET SUR LE CÔTÉ -->
+    <div class="detail-layout">
+      <article class="detail-main">
+        <h1 id="detail-title">Chargement...</h1>
+        <div id="detail-text" class="detail-text"></div>
+        <div id="detail-gallery" class="detail-gallery"></div>
+      </article>
+
+      <aside class="detail-sidebar">
+        <h3>📌 Infos de l'événement</h3>
+        <div id="sidebar-info-list" class="sidebar-info-list"></div>
+        <a href="../legal.html#contact" class="btn-primary" style="width:100%;">S'inscrire / Contacter l'orga</a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- BANDEAU RGPD / CGU -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      🍪 <strong>Respect de votre vie privée (RGPD) :</strong> Ce site utilise uniquement un stockage local technique pour mémoriser votre majorité (+18 ans), sans aucun traceur publicitaire. Consultez nos <a href="../legal.html#cgu">CGU</a> et notre <a href="../legal.html#rgpd">Politique RGPD</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="btn-accept-cookies" class="btn-primary">J'ai compris</button>
+    </div>
+  </div>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail réservé aux adultes (+18 ans).</p>
+      <div class="footer-links">
+        <a href="../legal.html#mentions">Mentions légales</a>
+        <a href="../legal.html#cgu">CGU</a>
+        <a href="../legal.html#rgpd">Politique RGPD</a>
+        <a href="../legal.html#contact">Contact / Soumettre</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../app.js"></script>
+</body>
+</html>

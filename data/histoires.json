@@ -1,0 +1,28 @@
+[
+  {
+    "id": "premiere-commande-temoignage",
+    "titre": "Ma première commande : dépasser l'appréhension des débuts",
+    "categorie": "Témoignage",
+    "date": "14 Novembre 2026",
+    "auteur": "Témoignage anonyme",
+    "tempsLecture": "4 min de lecture",
+    "banniere": "assets/images/banniere-histoire.svg",
+    "resume": "Comment j'ai osé passer ma première commande en ligne, le choix du point relais et le sentiment de détente une fois le colis récupéré.",
+    "texte": "Pendant longtemps, j'ai hésité à franchir le pas d'une commande sur une boutique spécialisée. J'avais peur que le carton soit trop reconnaissable ou que le commerçant du point relais se doute de quelque chose.\n\nEn vérifiant les avis sur la discrétion des expéditions, j'ai finalement commandé un pack d'échantillons livré en consigne automatique. Le jour du retrait, tout s'est fait en trente secondes : un carton brun totalement banal, parfaitement scellé.\n\nRétrospectivement, cette étape m'a permis d'accepter cette facette de ma vie avec beaucoup plus de sérénité et de déculpabiliser complètement.",
+    "images": [
+      "assets/images/illustration-1.svg"
+    ]
+  },
+  {
+    "id": "week-end-hors-du-temps",
+    "titre": "Un dimanche pluvieux hors du temps",
+    "categorie": "Récit Cosy",
+    "date": "5 Novembre 2026",
+    "auteur": "Plume Pastel",
+    "tempsLecture": "6 min de lecture",
+    "banniere": "assets/images/banniere-histoire.svg",
+    "resume": "Une parenthèse de douceur loin du rythme professionnel : chocolat chaud, plaid pastel et lâcher-prise complet à la maison.",
+    "texte": "La pluie tambourinait doucement contre les vitres depuis le début de la matinée, offrant le prétexte parfait pour mettre le téléphone en mode avion et oublier les obligations de la semaine.\n\nDans le salon baigné d'une lumière tamisée, tout était prêt pour une journée cocooning : un grand plaid doux sur le canapé, une tasse de chocolat chaud fumant et un dessin animé familier en fond sonore.\n\nS'accorder ces quelques heures de régression choisie, dans le calme et la sécurité de son chez-soi, reste l'un des meilleurs remèdes contre le stress accumulé au quotidien.",
+    "images": []
+  }
+]

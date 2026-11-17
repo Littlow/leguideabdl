@@ -1,0 +1,40 @@
+[
+  {
+    "id": "commander-en-discretion",
+    "titre": "Comment commander en point relais ou Locker en toute sérénité ?",
+    "categorie": "Guide Discrétion",
+    "date": "15 Novembre 2026",
+    "auteur": "L'équipe LeGuideABDL",
+    "tempsLecture": "4 min de lecture",
+    "banniere": "assets/images/banniere-blog.svg",
+    "resume": "Emballages bruns anonymes, nom d'expéditeur neutre et retrait en consigne automatique : toutes les astuces pour éviter les regards indiscrets.",
+    "texte": "Passer sa première commande en ligne génère souvent une appréhension légitime : le livreur peut-il deviner le contenu du colis ? Le nom de la boutique apparaît-il sur l'étiquette ?\n\nLa bonne nouvelle, c'est que les boutiques spécialisées référencées dans notre annuaire avec la mention « Colis 100 % neutre » utilisent exclusivement des cartons bruns épais, sans aucun logo ni ruban adhésif imprimé. L'adresse d'expédition mentionne uniquement une raison sociale logistique générique.\n\nPour une tranquillité maximale, privilégiez la livraison en consigne automatique (Locker 24/7) ou en point relais : vous récupérez votre carton de manière autonome avec un simple code sur votre téléphone, sans jamais craindre qu'un voisin réceptionne le colis à votre place.",
+    "images": [
+      "assets/images/illustration-1.svg"
+    ]
+  },
+  {
+    "id": "plastique-vs-tissu",
+    "titre": "Finition plastique (PE) ou tissu respirant (Cloth-like) : que choisir ?",
+    "categorie": "Comparatif",
+    "date": "10 Novembre 2026",
+    "auteur": "L'équipe LeGuideABDL",
+    "tempsLecture": "5 min de lecture",
+    "banniere": "assets/images/banniere-blog.svg",
+    "resume": "Analyse du confort thermique, du maintien des attaches et de la discrétion sonore selon votre usage de jour ou de nuit.",
+    "texte": "Le choix entre une enveloppe externe en plastique (polyéthylène) et une enveloppe façon tissu respirant dépend avant tout du contexte dans lequel vous portez votre protection.\n\nLes modèles à finition plastique (PE) offrent un maintien supérieur, ne se détendent pas sous le poids et bloquent parfaitement les odeurs. En contrepartie, ils peuvent produire un léger bruissement sous des vêtements fins.\n\nÀ l'inverse, les modèles à voile externe micro-respirant sont plus silencieux et plus frais en été, surtout lorsqu'ils sont associés à un body ajusté qui assure le maintien tout au long de la journée.",
+    "images": []
+  },
+  {
+    "id": "choisir-taille-body",
+    "titre": "Bien choisir la taille de son body adulte : le guide complet",
+    "categorie": "Guide des Tailles",
+    "date": "2 Novembre 2026",
+    "auteur": "L'équipe LeGuideABDL",
+    "tempsLecture": "3 min de lecture",
+    "banniere": "assets/images/banniere-blog.svg",
+    "resume": "Comment mesurer son buste et pourquoi il est souvent conseillé de vérifier la longueur du tronc avant d'acheter.",
+    "texte": "Contrairement à un t-shirt classique, l'ajustement d'un body adulte repose principalement sur la hauteur du buste (mesurée de l'épaule jusqu'à l'entrejambe en passant par le dos).\n\nLes marques spécialisées comme Onesies Down Under ou Diaper-Minister intègrent déjà une coupe plus longue pour accueillir une protection épaisse sans tirer sur les pressions.\n\nSi vous êtes entre deux tailles dans le tableau du fabricant, prenez la taille inférieure pour un maintien près du corps sous vos vêtements, ou la taille supérieure pour un confort ample façon pyjama d'intérieur.",
+    "images": []
+  }
+]
