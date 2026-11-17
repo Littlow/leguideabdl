@@ -3,25 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeGuideABDL.fr</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #1e293b;
-      color: #f8fafc;
-      font-family: sans-serif;
-      text-align: center;
-    }
-  </style>
+  <title>LeGuideABDL.fr — Annuaire, Comparateur & Guides ABDL</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-    <h1>LeGuideABDL.fr</h1>
-    <p>Le site est en ligne et en cours de construction.</p>
+
+  <!-- POP-UP VÉRIFICATION +18 ANS -->
+  <div id="age-overlay" class="age-overlay" aria-modal="true" role="dialog">
+    <div class="age-modal">
+      <div class="age-badge">18+</div>
+      <h2>Accès réservé aux adultes</h2>
+      <p>
+        <strong>LeGuideABDL.fr</strong> est un portail d'information, un comparateur et un annuaire dédié à l'univers ABDL entre adultes consentants.
+      </p>
+      <p class="age-subtext">
+        En entrant sur ce site, vous certifiez avoir atteint l'âge de la majorité légale dans votre pays de résidence (18 ans minimum).
+      </p>
+      <div class="age-actions">
+        <button id="btn-enter" class="btn-primary">J'ai 18 ans ou plus — Entrer</button>
+        <button id="btn-leave" class="btn-secondary">Quitter le site</button>
+      </div>
+    </div>
   </div>
+
+  <!-- EN-TÊTE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        LeGuide<strong>ABDL</strong><span class="logo-ext">.fr</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#annuaire" class="active">Annuaire</a>
+        <a href="#comparateur">Comparateur</a>
+        <a href="#guides">Guides</a>
+      </nav>
+      <button id="btn-discreet" class="btn-discreet" title="Basculer immédiatement vers une page neutre">
+        👁️ Mode Discret
+      </button>
+    </div>
+  </header>
+
+  <!-- BANDEAU TRANSPARENCE AFFILIATION -->
+  <div class="affiliation-banner">
+    <div class="container">
+      ℹ️ <strong>Transparence :</strong> Certains liens vers les boutiques sont des liens affiliés. Si vous passez commande, nous pouvons percevoir une petite commission sans aucun surcoût pour vous.
+    </div>
+  </div>
+
+  <!-- HERO & RECHERCHE -->
+  <section class="hero">
+    <div class="container">
+      <h1>Toutes les boutiques et ressources ABDL de confiance</h1>
+      <p>Comparez les revendeurs européens, vérifiez la discrétion des colis et trouvez les meilleurs tarifs en un clic.</p>
+      
+      <div class="filters-bar">
+        <input type="text" id="search-input" placeholder="Rechercher une boutique, une marque (Rearz, Crinklz...)">
+        
+        <select id="filter-category">
+          <option value="all">Toutes les catégories</option>
+          <option value="Couches">Couches adultes</option>
+          <option value="Bodys">Bodys & Vêtements</option>
+          <option value="Accessoires">Tétines & Accessoires</option>
+          <option value="Multimarques">Revendeur Multimarques</option>
+        </select>
+
+        <select id="filter-country">
+          <option value="all">Tous les pays d'envoi</option>
+          <option value="France">🇫🇷 France</option>
+          <option value="Union Européenne">🇪🇺 Union Européenne (Sans douane)</option>
+          <option value="International">🌍 Hors UE</option>
+        </select>
+
+        <label class="checkbox-filter">
+          <input type="checkbox" id="filter-discreet">
+          <span>Colis 100 % neutre</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRILLE DE L'ANNUAIRE -->
+  <main id="annuaire" class="container main-content">
+    <div class="results-header">
+      <h2 id="results-count">Chargement des boutiques...</h2>
+    </div>
+    <div id="boutiques-grid" class="boutiques-grid">
+      <!-- Les cartes boutiques s'injectent ici via app.js -->
+    </div>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>LeGuideABDL.fr</strong> — Portail communautaire réservé aux adultes (+18 ans).</p>
+      <div class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique RGPD</a>
+        <a href="#">Soumettre une boutique</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
